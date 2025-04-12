@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         let users = await User.find();
         res.status(200).json({ users });
     } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: err.message });
     }
 });
 
